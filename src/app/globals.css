@@ -1,0 +1,185 @@
+@import "tailwindcss";
+
+:root {
+  /* DARK DEFAULT */
+  --background: #000000;
+  --foreground: #fafafa;
+
+  --primary: #ffffff;
+  --primary-foreground: #000000;
+
+  --secondary: #a1a1aa;
+  --secondary-foreground: #ffffff;
+
+  --accent: #d4d4d8;
+  --accent-foreground: #000000;
+
+  --card: rgba(17, 17, 20, 0.72);
+  --card-foreground: #fafafa;
+
+  --over-card: rgba(24, 24, 27, 0.82);
+
+  --border: rgba(255, 255, 255, 0.08);
+
+  --muted: #a1a1aa;
+
+  --glass: rgba(255, 255, 255, 0.04);
+  --glass-border: rgba(255, 255, 255, 0.08);
+
+  --hero-gradient: radial-gradient(circle at top, #202020 0%, #050505 45%, #000000 100%);
+
+  --font-display: "Poppins", system-ui, sans-serif;
+  --font-body: "Satoshi", system-ui, sans-serif;
+}
+
+.light {
+  /* LIGHT OPTIONAL */
+  --background: #f5f5f7;
+  --foreground: #111111;
+
+  --primary: #18181b;
+  --primary-foreground: #ffffff;
+
+  --secondary: #71717a;
+  --secondary-foreground: #ffffff;
+
+  --accent: #d4d4d8;
+  --accent-foreground: #111111;
+
+  --card: rgba(255, 255, 255, 0.7);
+  --card-foreground: #111111;
+
+  --over-card: rgba(142, 130, 130, 0.55);
+
+  --border: rgba(0, 0, 0, 0.08);
+
+  --muted: #71717a;
+
+  --glass: rgba(255, 255, 255, 0.08);
+  --glass-border: rgba(255, 255, 255, 0.12);
+
+  --hero-gradient: radial-gradient(circle at top, #2a2a2a 0%, #0a0a0a 55%, #000000 100%);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-over-card: var(--over-card);
+  --color-border: var(--border);
+  --color-muted: var(--muted);
+  --color-glass: var(--glass);
+  --color-glass-border: var(--glass-border);
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+}
+
+/* css classes */
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+@keyframes progress {
+  0% {
+    width: 0%;
+    opacity: 0.4;
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  85% {
+    opacity: 1;
+  }
+
+  100% {
+    width: 100%;
+    opacity: 0.4;
+  }
+}
+
+.animate-progress {
+  animation-name: progress;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+/* LEFT DESKTOP DIVIDER */
+
+.fade-divider {
+  position: relative;
+}
+
+.fade-divider::after {
+  content: "";
+  position: absolute;
+
+  top: 50%;
+  right: 0;
+
+  width: 1.5px;
+  height: 80%;
+
+  transform: translateY(-50%);
+
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(255, 255, 255, 0.08) 15%,
+    rgba(255, 255, 255, 0.18) 50%,
+    rgba(255, 255, 255, 0.08) 85%,
+    transparent 100%
+  );
+}
+
+/* RIGHT MOBILE TOP DIVIDER */
+
+.mobile-top-divider {
+  position: relative;
+}
+
+.mobile-top-divider::before {
+  content: "";
+  position: absolute;
+
+  top: 0;
+  left: 1rem;
+  right: 1rem;
+
+  height: 1.5px;
+
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(255, 255, 255, 0.08) 15%,
+    rgba(255, 255, 255, 0.18) 50%,
+    rgba(255, 255, 255, 0.08) 85%,
+    transparent 100%
+  );
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1023px) {
+  .fade-divider::after {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .mobile-top-divider::before {
+    display: none;
+  }
+}
+
+/* Phone DropDown */
+.PhoneInputCountrySelect {
+  color: black !important;
+}
