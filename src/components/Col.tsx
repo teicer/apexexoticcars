@@ -120,5 +120,5 @@ export default function Col({
   span?: ColSpan;
   className?: string;
 }) {
-  return <div className={cn(clsFromSpan(span), className)}>{children}</div>;
+  return <div className={cn("min-w-0 max-w-full", clsFromSpan(span), className)}>{children}</div>;
 }

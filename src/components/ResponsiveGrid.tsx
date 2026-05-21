@@ -89,5 +89,5 @@ export default function ResponsiveGrid({
   gap?: "gap-0" | "gap-1" | "gap-2" | "gap-3" | "gap-4" | "gap-5" | "gap-6" | "gap-8" | "gap-10";
   className?: string;
 }) {
-  return <div className={cn("grid", clcFromCols(cols), gap, className)}>{children}</div>;
+  return <div className={cn("grid w-full max-w-full grid-cols-12 gap-4", className)}>{children}</div>;
 }
